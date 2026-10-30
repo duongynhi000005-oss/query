@@ -322,7 +322,7 @@ export class QueryClient extends QC {
         TQueryKey,
         TPageParam
       >
-    >,
+    > | UseQueryOptions<TQueryFnData, TError, TData, TQueryData, TQueryKey>,
   ): Promise<TData>
   override query<
     TQueryFnData,
@@ -341,7 +341,7 @@ export class QueryClient extends QC {
         TQueryKey,
         TPageParam
       >
-    >,
+    > | UseQueryOptions<TQueryFnData, TError, TData, TQueryData, TQueryKey>,
   ): Promise<TData> {
     return super.query(cloneDeepUnref(options))
   }
